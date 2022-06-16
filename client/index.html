@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <title>Order List for Cinnamon Rolls</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="container">
-            <h2><i class="fa-solid fa-clipboard-check"></i>Salmon Rolls List of Orders</h2>
-            <div class="user-input">
-            <input id="input"><button onclick="addOrder()">Submit</button>
-            </div>
-        </div>
+      <div class="container">
+        <h2>
+          <i class="fa-solid fa-clipboard-check"></i>Salmon Rolls List of Orders
+        </h2>
+        <!-- <form>
+                <input placeholder="type order here" />
+                <button class="addOrder"
+                type="button">Submit</button>
+            </form> -->
+        <input placeholder="type order here" id="query-input" />
+        <button id="getQuerySubmit">Submit</button>
+      </div>
     </div>
     <div class="container">
-        <div class="to-do-orders"></div>
+      <div id="displaySection" class="d-flex flex-row flex-wrap p-2 justify-content-md-evenly gap-3"></div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>

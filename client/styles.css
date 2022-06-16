@@ -12,8 +12,9 @@ body {
     color: white;
 }
 
+
+
 .container{
-    border: 1px solid black;
     width: 95%;
     margin: auto;
 }
@@ -31,25 +32,100 @@ body {
 }
 
 .user-input {
-    border: 1px solid black;
     width: 350px;
     text-align: center;
 }
 
 .user-input input {
-    width: 80%
+    width: 80%;
     outline: none;
     padding: 8px;
     border: 1px solid lightgray;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-     -webkit-transition: all 0.30s ease-in-out;
-     -moz-transition: all 0.30s ease-in-out;
-     -ms-transition: all 0.30s ease-in-out;
-     -o-transition: all 0.30s ease-in-out;
-     transition: all 0.30s ease-in-out;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
 }
 
 .user-input input:focus{
-    box-shadow: 0 0 5px;
+    box-shadow: 0 0 5px teal;
+    border: 1px solid teal;
+}
+
+.user-input button{
+    cursor: pointer;
+    padding: 8px;
+    transition: 1s;
+    outline: none;
+    background-color: lightgray;
+    border: 1px solid lightgray;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.user-input button:hoover{
+    background-color: transparent;
+    color: white;
+}
+
+.to-do-orders {
+    width: 500px;
+    margin: auto;
+}
+
+.orders{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 100%; 
+    height: auto;
+    border-radius: 2px;
+    padding: 16px;
+    color: black;
+    margin-top: 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
+}
+
+.order:hoover{
+    box-shadow: 0 0 20px teal;
+    border: 1px solid teal;
+}
+
+.order i{
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+@media(max-width:768px){
+    .nav{
+        align-items: center;
+        flex-direction: column;
+    }
+    .user-input{
+        width: 100%;
+    }
+    .orders{
+        width: 100%;
+    }
+}
+
+@media(max-width:480px){
+    .user-input input{
+        width: 74%;
+    }
+}
+
+@media(max-width:320px){
+    .user-input input{
+        width: 60%;
+    }
 }
