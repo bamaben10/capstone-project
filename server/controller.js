@@ -31,6 +31,17 @@ const products = [
     },
 ]
 
+// create array called orderArr and when we recieve new order, add new order to arr and send the entire arr back to the front end.  
+
+orderArr = [
+    'Cinnamon Lovers Roll',
+    'Chocolate Drizzle Cinnamon Roll',
+    'Lemon Cinnamon Roll',
+    'Cinnamon Raisin Lover',
+    'Original Salmon Roll with Fruit',
+    'Original Salmon Roll'
+]
+
 
 module.exports={
     getProducts: (req,res) => {
@@ -42,5 +53,25 @@ module.exports={
         } else {
             res.status(200).send(products)
         }
+    },
+
+    postRolls: (req,res) => {
+        console.log(req.body.item);
+
+        if(req.body.item){
+            const filterOrderArr = orders.filter(order => order.name.toLowerCase().includes(req.body.item.toLowerCase()))
+            res.status(200).send(filterOrdersArr)
+        } else {
+            res.status(200).send(orders)
+        }
+
+        // if(req.query.search){
+        //     const addProducts = products.add
+        //     (product => product.name.toLowerCase().includes(req.query.add.toLowerCase()))
+        //     res.status(200).send(filterRolls)
+        // } else {
+        //     res.status(200).post(Rolls)
+        // }
+
     }
 }
