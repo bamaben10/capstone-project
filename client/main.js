@@ -4,11 +4,8 @@ const baseURL = `http://localhost:5050`
 const searchButton = document.querySelector('#getQuerySubmit')
 const displaySection = document.querySelector('#displaySection')
 const userInput = document.querySelector('#query-input')
-// const addToOrder = document.querySelector('#postQuery')
-// const createElement = body => axios.post(baseURL, body).then(productCallback).catch(errCallback)
-// const addToOrder = document.querySelector('#addToOrder')
 const addtoOrderButton = document.createElement('button')
-// document.body.appendChild(addtoOrderButton)
+const deleteButton = document.createElement('button')
 
 const addToOrder = (item) => {
     console.log(item)
@@ -19,8 +16,12 @@ const addToOrder = (item) => {
 
     //when the response comesback, console.log the response
     .then(res => displayRolls(res.data))
-    console.log(res.data)
     .catch(err => console.log(err))
+    
+}
+
+const removeOrder = (item) => {
+    console.log(item)
 }
 
 
@@ -39,6 +40,7 @@ const displayRolls = (arr) => {
           <h5 class="card-title" style="color: black">${product.name}</h5>
           <p class="card-subtitle" style="color: black">$${product.price}</p>
           <button onclick="addToOrder('${product.name}')" class="btn btn-primary">Add to Order</a>
+          <button onclick="delete('${product.name}')" class="btn btn-primary">Remove</button>
         </div>
       </div>
         `
@@ -55,40 +57,13 @@ const postRolls = (arr) => {
         .catch(err => console.log(err))
     } else {
         axios.post(`./api/products`)
-        .then(res => displayRolls(res.data))
+        .then(res => postRolls(res.data))
         .catch(err => console.log(err))
 
         displaySection.appendChild(cardContainer)
         addtoOrderButton.addEventListener('click', postRolls)
     }
 }
-// displaySection.appendChild(cardContainer)
-// addToOrder.addEventListener('click', postRolls)
-
-// function addRolls(arr) {
-//     cardContainer.innerHTML = ``
-//     for (let i = 0; i < arr.length; i++) {
-//         postRolls(arr[i])
-//     }
-// }
-// displaySection.appendChild(cardContainer)
-// addToOrder.addEventfListener('click', postRolls)
-
-// const chooseRoll = (id) => {
-//     if (displayRolls.length === 'all') {
-//         return alert('Select Rolls!')
-//     }
-//     let index = choices.findIndex(displayRolls => displayRolls.id === id)
-//     displayRolls.push(getRolls[index])
-//     getRolls.splice(index, 1)
-//     displayRolls()
-//     if (playerDuo.length === 2) {               addToOrder.getRolls.remove('hide')
-//     }
-//     form.addEventListener('submit', submitHandler)
-// }
-// displaySection.appendChild(cardContainer)
-// addToOrder.addEventfListener('click', postRolls)
-
 
 
 const getRolls = () => {
