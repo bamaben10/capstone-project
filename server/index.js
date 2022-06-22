@@ -4,10 +4,10 @@ const cors = require('cors')
 const app = express()
 const { getProducts, postRolls } = require('./controller')
 
-app.use(express.static('public'))
+app.use(express.static('client'))
 
 app.get('/', (req,res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'))
+    res.sendFile(path.join(__dirname, '../client/index.html'))
 })
 
 const port = process.env.PORT || 5050
