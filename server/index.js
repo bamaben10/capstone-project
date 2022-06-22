@@ -20,10 +20,8 @@ app.post('/api/products', postRolls);
 // app.delete('/api/order', removeOrder);
 
 
-const SERVER_PORT = 5050
-
-app.listen(SERVER_PORT, () => {
-    console.log(`SERVER IS RUNNING ON PORT ${SERVER_PORT}`);
+app.listen(port, () => {
+    console.log(`SERVER IS RUNNING ON PORT ${port}`);
 })
 
 

@@ -1,18 +1,18 @@
-const baseURL = `http://localhost:5050`
+// const baseURL = `http://localhost:5050`
 
 
 const searchButton = document.querySelector('#getQuerySubmit')
 const displaySection = document.querySelector('#displaySection')
 const userInput = document.querySelector('#query-input')
 const addtoOrderButton = document.createElement('button')
-const deleteButton = document.createElement('button')
+// const deleteButton = document.createElement('button')
 
 const addToOrder = (item) => {
     console.log(item)
     let body = {
         item
     }
-    axios.post(`${baseURL}/api/products`, body)
+    axios.post(`/api/products`, body)
 
     //when the response comesback, console.log the response
     .then(res => displayRolls(res.data))
@@ -20,9 +20,20 @@ const addToOrder = (item) => {
     
 }
 
-const removeOrder = (item) => {
-    console.log(item)
-}
+// const removeOrder = (item) => {
+//     if(cardContainer){
+//         const cardContainer = document.createElement("div")
+//         cardContainer.subtract('removeOrder')
+//         axios.delete(`/api/removeOrder`)
+//         .then(res => removeOrder(res.data))
+//         .catch(err => console.log(err))
+//     } else {
+//         axios.delete(`./api/order`)
+//         .then(res => removeOrder(res.data))
+//         .catch(err => console.log(err))
+//     }
+//     deleteButton.addEventListener('click', removeOrder)
+// }
 
 
 const displayRolls = (arr) => {
@@ -39,8 +50,8 @@ const displayRolls = (arr) => {
         <div class="card-body">
           <h5 class="card-title" style="color: black">${product.name}</h5>
           <p class="card-subtitle" style="color: black">$${product.price}</p>
-          <button onclick="addToOrder('${product.name}')" class="btn btn-primary">Add to Order</a>
-          <button onclick="delete('${product.name}')" class="btn btn-primary">Remove</button>
+          <button onclick="addToOrder('${product.name}')" class="btn btn-primary">Select Cinnamon Roll</a>
+         
         </div>
       </div>
         `
@@ -69,11 +80,11 @@ const postRolls = (arr) => {
 const getRolls = () => {
     console.log(userInput.value)
     if(userInput.value){
-        axios.get(`${baseURL}/api/products?search=${userInput.value}`)
+        axios.get(`/api/products?search=${userInput.value}`)
         .then(res => displayRolls(res.data))
         .catch(err => console.log(err))
     } else {
-        axios.get(`${baseURL}/api/products`)
+        axios.get(`/api/products`)
         .then(res => displayRolls(res.data))
         .catch(err => console.log(err))
     }
