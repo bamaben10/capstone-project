@@ -15,7 +15,7 @@ const addToOrder = (item) => {
     axios.post(`/api/products`, body)
 
     //when the response comesback, console.log the response
-    .then(res => displayRolls(res.data))
+    .then(res => alert('Cinnamon roll added to order.'))
     .catch(err => console.log(err))
     
 }
@@ -50,7 +50,7 @@ const displayRolls = (arr) => {
         <div class="card-body">
           <h5 class="card-title" style="color: black">${product.name}</h5>
           <p class="card-subtitle" style="color: black">$${product.price}</p>
-          <button onclick="addToOrder('${product.name}')" class="btn btn-primary">Select Cinnamon Roll</a>
+          <button onclick="addToOrder('${product.name}')" class="btn btn-primary">Add to Order</a>
          
         </div>
       </div>

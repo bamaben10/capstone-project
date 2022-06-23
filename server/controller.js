@@ -58,14 +58,10 @@ module.exports={
         };
         orderArr.push(item)
         res.status(200).send(orderArr)
-    },
+    }
 
     // removeRolls: (req,res) => {
     //     removeRolls: (req, res) => {
-    //         let index = removeOrder.findIndex((elem) => elem.id === +req.params.id);
-    //         this.removeRolls.splice(index, 1);
-    //         console.log(this.removeRolls);
-    //         res.status(200).send(removeOrder);
-    //     }
-    // }
+    //     res.status(200).send()
+      // }
 }
