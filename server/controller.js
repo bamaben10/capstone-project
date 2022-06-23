@@ -31,8 +31,6 @@ const products = [
     },
 ]
 
-// create array called orderArr and when we recieve new order, add new order to arr and send the entire arr back to the front end.  
-
 orderArr = [
     
 ]
